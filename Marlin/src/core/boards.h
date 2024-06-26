@@ -182,6 +182,8 @@
 #define BOARD_WEEDO_62A               1330  // WEEDO 62A board (TINA2, Monoprice Cadet, etc.)
 #define BOARD_GT2560_V41B             1331  // Geeetech GT2560 V4.1B for A10(M/T/D)
 
+#define BOARD_I3PLUS3030 			  1350  // Wanhao D9 Mk2
+
 //
 // ATmega1281, ATmega2561
 //

@@ -270,6 +270,8 @@
   #include "ramps/pins_PANOWIN_CUTLASS.h"           // ATmega2560                           env:mega2560ext
 #elif MB(KODAMA_BARDO)
   #include "ramps/pins_KODAMA_BARDO.h"              // ATmega2560                           env:mega2560ext
+#elif MB(I3PLUS3030)
+  #include "ramps/pins_I3PLUS3030.h"            // ATmega2560                             env:mega2560
 
 //
 // RAMBo and derivatives

@@ -7,6 +7,9 @@
 
 #warning "Creality DWIN Compiled"
 
+#define BED_TRAMMING_HEIGHT      0.0        // (mm) Z height of nozzle at tramming points
+#define BED_TRAMMING_Z_HOP       4.0        // (mm) Z raise between tramming points
+
 #if ENABLED(EXTENSIBLE_UI)
 namespace ExtUI
 {
@@ -1933,6 +1936,10 @@ void onConfigurationStoreRead(bool success)
   void onHeatingError(const heater_id_t header_id){}
   void onMinTempError(const heater_id_t header_id){}
   void onMaxTempError(const heater_id_t header_id){}
+
+  #if ENABLED(MPC_AUTOTUNE)
+    void onMPCTuning(const mpcresult_t rst){}
+  #endif
 } // namespace ExtUI
 
 #endif

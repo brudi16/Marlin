@@ -232,7 +232,7 @@ public:
   #endif
 
   #if ENABLED(SOUND_MENU_ITEM)
-    static bool sound_on; // Initialized by settings.load()
+    static bool sound_on; // Initialized by settings.load
   #else
     static constexpr bool sound_on = true;
   #endif
@@ -304,6 +304,8 @@ public:
     static void refresh_screen_timeout();
   #endif
 
+  // Sleep or wake the display (e.g., by turning the backlight off/on).
+  static bool display_is_asleep() IF_DISABLED(HAS_DISPLAY_SLEEP, { return false; });
   static void sleep_display(const bool=true) IF_DISABLED(HAS_DISPLAY_SLEEP, {});
   static void wake_display() { sleep_display(false); }
 
@@ -648,10 +650,7 @@ public:
     #if ALL(SCROLL_LONG_FILENAMES, HAS_MARLINUI_MENU)
       #define MARLINUI_SCROLL_NAME 1
     #endif
-    #if MARLINUI_SCROLL_NAME
-      static uint8_t filename_scroll_pos, filename_scroll_max;
-    #endif
-    static const char * scrolled_filename(CardReader &theCard, const uint8_t maxlen, uint8_t hash, const bool doScroll);
+    static const char * scrolled_filename(CardReader &theCard, const uint8_t maxlen, const bool doScroll);
   #endif
 
   #if HAS_PREHEAT
@@ -743,7 +742,7 @@ public:
 
     static void draw_select_screen_prompt(FSTR_P const fpre, const char * const string=nullptr, FSTR_P const fsuf=nullptr);
 
-  #else
+  #else // !HAS_MARLINUI_MENU
 
     static void return_to_status() {}
 
@@ -753,7 +752,7 @@ public:
       FORCE_INLINE static void run_current_screen() { status_screen(); }
     #endif
 
-  #endif
+  #endif // !HAS_MARLINUI_MENU
 
   #if ANY(HAS_MARLINUI_MENU, EXTENSIBLE_UI)
     static bool lcd_clicked;

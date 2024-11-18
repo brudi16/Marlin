@@ -125,6 +125,7 @@ vc-fileutils.settings
 # Visual Studio Code
 .vscode/*
 !.vscode/extensions.json
+*.code-workspace
 
 # Simulation files
 imgui.ini
@@ -175,3 +176,6 @@ Marlin/Configuration-Stock.h
 /.vscode
 Marlin/Configuration_adv - Kopie.h
 Marlin/Configuration_adv-Stock.h
+.aider*
+!.aiderignore
+.env

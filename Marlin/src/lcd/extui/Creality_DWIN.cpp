@@ -1919,6 +1919,7 @@ void onConfigurationStoreRead(bool success)
   void onAxisDisabled(const axis_t axis) {}
   void onAxisEnabled(const axis_t axis) {}
   void onMeshUpdate(const int8_t xpos, const int8_t ypos, const_float_t zval){}
+  void onMeshUpdate(const int8_t xpos, const int8_t ypos, const probe_state_t state){}
   void onPostprocessSettings(){}
   void onSettingsLoaded(const bool success){}
   void onPauseMode(const PauseMessage message, const PauseMode mode, const uint8_t extruder){}

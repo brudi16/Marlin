@@ -35,7 +35,7 @@
 #define TEMP_BED_PIN       14   
 #define SD_DETECT_PIN       49
 #define SERVO0_PIN         7
-#define SDSS               53
+#define SD_SS_PIN          53
 #define LED_PIN            13
 #ifndef FILWIDTH_PIN
 #define FILWIDTH_PIN       12
